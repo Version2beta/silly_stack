@@ -1,21 +1,20 @@
 # Stack
 
-**TODO: Add description**
+A simple implementation of a stack.
 
-## Installation
+## Demonstration
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `stack` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:stack, "~> 0.1.0"}
-  ]
-end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/stack](https://hexdocs.pm/stack).
-
+iex(1)> [] |> Stack.push(0)
+{:ok, [0]}
+iex(2)> [] |> Stack.push!(0)
+[0]
+iex(3)> [] |> Stack.push!(0) |> Stack.push(1)
+{:ok, [1, 0]}
+iex(4)> [] |> Stack.push!(0) |> Stack.push!(1)
+[1, 0]
+iex(5)> v(4) |> Stack.pop!
+{1, [0]}
+iex(6)> v(4) |> Stack.peek!
+{1, [1, 0]}
+```
